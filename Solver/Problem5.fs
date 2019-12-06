@@ -5,17 +5,17 @@
 
     type State = {  variableValues: int[];
                     mutable position: int;
-                    mutable output: int list }
+                    mutable output: List<int> }
 
     let parseState input = 
         let sc = Scanner(input, false, ",")
         { variableValues = sc.Ints |> Array.ofSeq;
           position = 0;
-          output = [] }
+          output = List<int>() }
 
     let doOperation (state: State) fixedInput =
         let getInput() = fixedInput
-        let output a = state.output <- a :: state.output
+        let output a = state.output.Add(a)
         let opAndModes = state.variableValues.[state.position]
         let op = opAndModes % 100
         let modes = opAndModes / 100
@@ -63,9 +63,9 @@
     let solveSilver input =
         let state = parseState input
         doOperations state 1
-        state.output.Head
+        state.output.[state.output.Count - 1]
 
     let solveGold input = 
         let state = parseState input
         doOperations state 5
-        state.output.Head
+        state.output.[0]
