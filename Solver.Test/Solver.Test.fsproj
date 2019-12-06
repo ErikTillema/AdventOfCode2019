@@ -77,6 +77,11 @@
   <ItemGroup>
     <Compile Include="AssemblyInfo.fs" />
     <Compile Include="Problem1Test.fs" />
+    <Compile Include="Problem2Test.fs" />
+    <Compile Include="Problem3Test.fs" />
+    <Compile Include="Problem4Test.fs" />
+    <Compile Include="Problem5Test.fs" />
+    <Compile Include="Problem6Test.fs" />
     <Content Include="packages.config" />
     <EmbeddedResource Include="Resources.resx" />
   </ItemGroup>
